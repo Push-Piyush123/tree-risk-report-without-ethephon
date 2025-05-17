@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tree Risk Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-shield-alt"></i> Tree Risk Admin Dashboard</h1>
+      <p>Monitor user-submitted tree risk reports</p>
+    </header>
+
+    <div class="toolbar">
+      <select id="riskFilter">
+        <option value="all">All Reports</option>
+        <option value="risky">Risky Only</option>
+        <option value="safe">Safe Only</option>
+      </select>
+
+      <button id="riskyDashboardBtn"><i class="fas fa-exclamation-triangle"></i> Risky Trees Dashboard</button>
+      <button id="actionDashboardBtn"><i class="fas fa-check-circle"></i> Action Taken Dashboard</button>
+      <button id="refreshBtn"><i class="fas fa-sync-alt"></i> Refresh</button>
+    </div>
+
+    <div id="reportsList" class="reports-list">
+      <div class="loading">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Loading reports...</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js" type="module"></script>
+</body>
+</html>
